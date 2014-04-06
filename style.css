@@ -1,76 +1,59 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather:300,400);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
 
 body {
-  color: #000;
+  font-family: 'Palatino Linotype', Palatino, serif;
+  font-size: 14pt;
+  margin-top: 50px;
+  margin-bottom: 25%;
+  margin-left: 25%;
+  margin-right: 25%;
+  color: #332;
   background: #FFF;
-
-  width: 33em;
-  margin: 6em auto;
-
-  font-family: Merriweather, serif;
-  font-size: 12pt;
-  line-height: 1.7;
+  line-height: 20pt;
 }
 
-h1 { font-size:2.25em;  /* 16x2.25=36 */ }
-h2 { font-size:1.5em;   /* 16x1.5=24 */ }
-h3 { font-size:1.125em; /* 16x1.125=18 */ }
-h4 { font-size:0.875em; /* 16x0.875=14 */ }
-
-p {
-  margin-bottom: 0;
-  text-align: justify;
-  hyphenate: auto;
-  hyphenate-before:2;
-  hyphenate-after:3;
+h1 {
+  color: #034F9B;
+  font-size: 20pt;
 }
 
-/* all paragraphs that are proceeded by another paragraph */
-p + p {
-  margin-top: 0;
-  text-indent: 1em;
-}
-
-img {
-  width: 100%;
-}
-
-figcaption {
-  text-align: center;
-  font-size: 0.875em;
-  font-style: italic;
-}
-
-figure {
-  margin: 2em;
+h2 {
+  color: #e71;
+  font-size: 18pt;
 }
 
 h3 {
-  margin-top: 5em;
-}
-
-pre {
-  background: #EEE;
-  padding: .5em;
-  margin: 1em 2em;
-}
-
-code {
-  background: #EEE;
-  padding: .25em;
+  color: #e71;
+  font-size: 16pt;
 }
 
 a {
-  color: #268bd2;
+  color: #e71;
   text-decoration: none;
 }
 
 a:hover {
-  color: #1a6192;
+  color: #06c;
+}
+
+code, pre {
+  font-family: 'Droid Sans Mono', monospace;
+  font-size: 12pt;
+  background: #EED;
+  padding: 2px;
+  margin: -2px;
 }
 
 #bottom {
-  margin-top: 2em;
-  font-size: 0.7em;
-  text-align: center;
+  color: #AA8;
+}
+
+#bottom a {
+  color: #AA8;
+  text-decoration: underline;
+}
+
+#bottom a:hover {
+  color: #886;
 }

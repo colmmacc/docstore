@@ -1,30 +1,13 @@
-var homepage = 'http://haldean.org'
-
-var converter = new Showdown.converter();
-
-function findFirstOf(str, chars) {
-  var first = -1;
-  for (var i = 0; i < chars.length; i++) {
-    var loc = str.indexOf(chars[i])
-    if (loc != -1 && (loc < first || first == -1)) {
-      first = loc;
-    }
-  }
-  return first;
-}
+var homepage = 'http://notesfromthesound.com'
 
 $.domReady(function() {
-  var page = document.location.search.substring(1)
-  var pageEnd = findFirstOf(page, ['&', '/'])
-  if (pageEnd >= 0) {
-    page = page.substring(0, pageEnd)
-  }
+  var page = document.location.pathname
+  if (page[page.length - 1] == '/') page = page.substring(0, page.length - 1)
   if (!page) {
-    window.location = homepage
-    return
+    page = "/default"
   }
 
-  var url = 'text/' + page + '.md'
+  var url = '/text' + page + '.md'
   $.ajax({
     url: url,
     type:'html',
@@ -33,16 +16,16 @@ $.domReady(function() {
         window.location = homepage
       }
 
-      document.getElementById('content').innerHTML = converter.makeHtml(resp)
+      document.getElementById('content').innerHTML = markdown.toHTML(resp)
       $('pre').each(function(el, index) {
         hljs.highlightBlock(el, '  ')
       })
     }})
 
   document.title = page;
-  document.getElementById('viewsource').setAttribute('href',
-    'https://raw.github.com/haldean/docstore/master/' + url)
-
+  document.getElementById('viewsource').setAttribute('href', 
+    'http://composedit.net' + url)
+  
   MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [['$','$'], ['\\(','\\)']],
