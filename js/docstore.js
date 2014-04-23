@@ -20,16 +20,11 @@ $.domReady(function() {
       $('pre').each(function(el, index) {
         hljs.highlightBlock(el, '  ')
       })
-    }})
 
-  document.title = page;
+      document.title = document.getElementsByTagName('h1')[0].textContent;
+  }})
+
   document.getElementById('viewsource').setAttribute('href', 
     'http://composedit.net' + url)
   
-  MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    processEscapes: true
-  }
-});
 })
